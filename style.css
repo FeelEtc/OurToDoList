@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(207, 185, 185);
+}
+.header{    
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    margin-left: 5px;
+}
+
+.list{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid green;
+}
