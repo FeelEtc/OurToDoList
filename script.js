@@ -9,19 +9,15 @@ const feel = function () {
   let done = document.createElement("input"); //поставить галочку
   done.type = "checkbox";
   task.append(done);
-  let noga = true;
-    done.addEventListener("click", function () {
-      if(noga){
-        taskValue.style.textDecoration = "line-through";
-        taskValue.style.color = "#ead7d7";
-        console.log(done);
-        noga = false;
-      }else{
-        taskValue.style.textDecoration = "none";
-        taskValue.style.color = "black";
-        noga = true;
-      }
-    });
+  done.addEventListener("click", function () {
+    if (done.checked) {
+      taskValue.style.textDecoration = "line-through";
+      taskValue.style.color = "#ead7d7";
+    } else {
+      taskValue.style.textDecoration = "none";
+      taskValue.style.color = "black";
+    }
+  });
 
   let taskValue = document.createElement("label"); //записанная новая задача
   task.append(taskValue);
