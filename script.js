@@ -9,7 +9,7 @@ const feel = function () {
   let done = document.createElement("input"); //поставить галочку
   done.type = "checkbox";
   task.append(done);
-  done.addEventListener("click", function () {
+  done.addEventListener("click", function () {//сделать задачу перечеркнутой при поставленном флажке и обратно
     if (done.checked) {
       taskValue.style.textDecoration = "line-through";
       taskValue.style.color = "#ead7d7";
