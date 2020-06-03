@@ -1,4 +1,6 @@
-const feel = function () {
+let count = 0;
+
+const feel = function () { //добавление ОДНОЙ НОВОЙ задачи
   let str = document.querySelector(".newTask").value; //значение из поля ввода
   let list = document.querySelector(".list");
 
@@ -24,6 +26,7 @@ const feel = function () {
   taskValue.innerHTML = str;
 
   let countValue = document.querySelector(".count");
+   
 
   let deleteButton = document.createElement("button"); //кнопка удаления задачи
   deleteButton.className = "delBut";
@@ -31,13 +34,14 @@ const feel = function () {
   task.append(deleteButton);
   deleteButton.addEventListener("click", function () {
     task.remove();
-    countValue.innerHTML = document.querySelectorAll(".task").length + ' items left';
+    count = count - 1;    
+    countValue.innerHTML = count  + ' items left';
   });
 
   document.querySelector(".newTask").value = ""; //обнуление поля ввода после ввода задачи
-
-  //let count = document.querySelectorAll(".task").length;  
-  countValue.innerHTML = document.querySelectorAll(".task").length + ' items left';
+  
+  count = count + 1; 
+  countValue.innerHTML = count + ' items left';
 };
 
 document.querySelector("button").addEventListener("click", feel);
