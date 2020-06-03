@@ -23,15 +23,21 @@ const feel = function () {
   task.append(taskValue);
   taskValue.innerHTML = str;
 
+  let countValue = document.querySelector(".count");
+
   let deleteButton = document.createElement("button"); //кнопка удаления задачи
   deleteButton.className = "delBut";
   deleteButton.innerHTML = "X";
   task.append(deleteButton);
   deleteButton.addEventListener("click", function () {
     task.remove();
+    countValue.innerHTML = document.querySelectorAll(".task").length + ' items left';
   });
 
   document.querySelector(".newTask").value = ""; //обнуление поля ввода после ввода задачи
+
+  //let count = document.querySelectorAll(".task").length;  
+  countValue.innerHTML = document.querySelectorAll(".task").length + ' items left';
 };
 
 document.querySelector("button").addEventListener("click", feel);
@@ -42,3 +48,5 @@ document.querySelector("input").addEventListener("keydown", function (e) {
     feel();
   }
 });
+
+
